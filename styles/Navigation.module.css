@@ -1,0 +1,17 @@
+.header{
+    width: 100%;
+    background-color: black;
+    color: white;
+    padding: 20px
+  }
+  
+.ul{
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+}
+  
+.li{
+    margin: 0 20px 0 20px
+}
+  
