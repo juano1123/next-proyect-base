@@ -7,7 +7,7 @@ export default function PageLayout({ children, title = "Ardin"}){
         <>
             <Head>
                 <title>{title}</title>
-                <meta name='description' content='Sitio oficial de gestion de la empresa Ardin, San Jose de Mayo, Uruguay.'/>
+                <meta name='description' content='Content del sitio'/>
                 <link rel='icon' href='/favicon.ico' />
             </Head>
             <NavigationComponent links={links}/>
