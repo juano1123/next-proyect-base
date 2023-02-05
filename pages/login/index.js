@@ -23,7 +23,7 @@ export default function Login() {
 
   useEffect(() => {
     if (userInfo) 
-      router('/')
+      router.push('/')
   }, [router, userInfo])
 
   return (
@@ -31,27 +31,17 @@ export default function Login() {
       <div className={styles.container}>
         <h1>Login</h1>
         <form onSubmit={handleSubmit(submitForm)}>
-        <div className='form-group'>
-            <label htmlFor='email'>Email</label>
-            <input
-            type='email'
-            className='form-input'
-            {...register('email')}
-            required
-            />
-        </div>
-        <div className='form-group'>
-            <label htmlFor='password'>Password</label>
-            <input
-            type='password'
-            className='form-input'
-            {...register('password')}
-            required
-            />
-        </div>
-        <button type='submit' className='button' disabled={loading}>
-            {loading ? <Spinner /> : 'Login'}
-        </button>
+          <div>
+              <label htmlFor='email'>Email</label>
+              <input type='email' {...register('email')} required />
+          </div>
+          <div>
+              <label htmlFor='password'>Password</label>
+              <input type='password' {...register('password')} required />
+          </div>
+          <button type='submit' disabled={loading}>
+              {loading ? <Spinner /> : 'Login'}
+          </button>
         </form>
       </div>
     </PageLayout>
