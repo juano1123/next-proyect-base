@@ -3,16 +3,18 @@ import { userLogin } from '../actions/authActions';
 
 const initialState = {
   loading: false,
-  userInfo: null,
-  userToken: null,
-  error: null,
-  success: false,
+  userInfo: null
 }
 
 const authSlice = createSlice({
   name: 'auth',
   initialState,
-  reducers: {},
+  reducers: {
+    logout: (state) => {
+      localStorage.removeItem('userToken');
+      state.userInfo = null;
+    }
+  },
   extraReducers:  (builder) => {
     builder
       .addCase(userLogin.fulfilled, (state, action) => {
@@ -24,9 +26,11 @@ const authSlice = createSlice({
       })
       .addCase(userLogin.rejected, (state, action) => {
         state.loading = false;
-        console.log(action.error.message);
+        console.log(action.payload.response.data.message);
       })
   },
 })
+
+export const { logout } = authSlice.actions;
 
 export default authSlice.reducer

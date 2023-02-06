@@ -3,15 +3,28 @@
     background-color: black;
     color: white;
     padding: 20px
-  }
+}
   
 .ul{
     display: flex;
     align-items: center;
     list-style-type: none;
+    justify-content: space-between;
 }
   
 .li{
     margin: 0 20px 0 20px
+}
+
+.logout{
+    padding: 8px 15px;
+    background-color: #ae0000;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.logout:hover{
+    opacity: 0.8;
 }
   

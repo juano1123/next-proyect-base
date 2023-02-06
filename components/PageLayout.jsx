@@ -15,7 +15,7 @@ export default function PageLayout({ children, title = "TODO"}){
                 <link rel='icon' href='/favicon.ico' />
             </Head>
             {
-                userInfo ? <NavigationComponent links={links}/> : null
+                userInfo ? <NavigationComponent links={links} logged={true} /> : null
             }
             <main>
                 {children}
